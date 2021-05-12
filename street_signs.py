@@ -5,8 +5,13 @@ from keras.models import Sequential
 from keras.layers import Dense, Conv2D, Dropout, Flatten, MaxPooling2D, Activation
 import pickle
 from numpy import genfromtxt
-
-pickle_off = open("data0.pickle","rb")
+try:
+    pickle_off = open("data0.pickle","rb")
+except:
+    print("---------------------------------------------------------------------------------------")
+    print("Please download the dataset 'data0.pickle' from https://www.kaggle.com/valentynsichkar/traffic-signs-preprocessed/version/1?select=data0.pickle")
+    print("---------------------------------------------------------------------------------------")
+    exit(0)
 data = pickle.load(pickle_off)
 
 
